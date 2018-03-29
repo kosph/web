@@ -81,8 +81,9 @@ section p {
 .border{
 	border:1px solid #C5CAE9;
 }
-.stronga a {
+.stronga a{
 	font-weight:bold;
+	color:#00B0FF;
 }
 #related-photos p{
 	padding:0;
