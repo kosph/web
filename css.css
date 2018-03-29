@@ -105,7 +105,6 @@ footer{
 	background-color:#1A237E;
 }
 footer p{
-
 	padding:0.3em 0;
 }
 section i{
@@ -117,4 +116,7 @@ time{
 }
 #figure i {
 	color:#7990A3;
+}
+section a{
+	color:white;
 }
