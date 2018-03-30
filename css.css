@@ -13,7 +13,7 @@ a{
 	vertical-align:bottom;
  }
 body{
-	width:825px;
+	min-width:600px;
 	background-color:rgb(232,233,246);
 	padding:0 5%;
 	color:white;
