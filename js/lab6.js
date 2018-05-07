@@ -16,4 +16,3 @@ for (i = 0;i<countries.length;i++){
 }
 
 document.getElementsByClassName('flex-container justify')[0].innerHTML = str;
-alert('!');
