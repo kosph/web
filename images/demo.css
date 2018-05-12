@@ -3,6 +3,29 @@ canvas{
 	display:none;
 }
 img{
-	display:none;
+	margin-top:4em;
 	margin-left:15%;
+}
+#hide{
+	text-align:center;
+}
+input{
+	margin-top:6em;
+	width:60%;
+	height:4em;
+	text-align:center;
+	font-size:40px;
+}
+button{
+	 font-family: 'Oswald', Arial, sans-serif;
+    background-color: #FF4081;
+    color: white;
+
+    border: none;
+	margin-top:4em;
+		width:60%;
+	height:4em;
+	text-align:center;
+	font-weight:bold;
+	font-size:40px;
 }
