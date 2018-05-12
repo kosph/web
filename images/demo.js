@@ -20,7 +20,7 @@ function canvasTextAutoLine(str,canvas,initX,initY,lineHeight){
 function btClick(){
 
 	username = document.getElementById('name').value;
-	canvasTextAutoLine('    就这样被你征服，切断了所有退路”'+username+'想着心中的那个她，优哉游哉，辗转反侧，深夜时起来唱《征服》，歌声响彻复旦的整栋宿舍楼。唱到高音时突然破嗓，然后整栋楼都沸腾起来……',c,10,150,100);
+	canvasTextAutoLine('    “就这样被你征服，切断了所有退路”'+username+'想着心中的那个她，优哉游哉，辗转反侧，深夜时起来唱《征服》，歌声响彻复旦的整栋宿舍楼。唱到高音时突然破嗓，然后整栋楼都沸腾起来……',c,10,150,100);
 
 	var image = new Image();
  image.src = c.toDataURL("image/png");
@@ -33,5 +33,5 @@ document.getElementById('test').appendChild(image);
 var c=document.getElementById("myCanvas");
 var cxt=c.getContext("2d");
 c.width = 0.7*document.body.offsetWidth;
-c.height = 800;
+c.height = 100%;
 var username;
