@@ -2,7 +2,7 @@ function canvasTextAutoLine(str,canvas,initX,initY,lineHeight){
     var ctx = canvas.getContext("2d"); 
 	ctx.font="50px Verdana";
     var lineWidth = 0;
-    var canvasWidth = canvas.width-100; 
+    var canvasWidth = canvas.width-50; 
     var lastSubStrIndex= 0; 
     for(let i=0;i<str.length;i++){
         lineWidth+=ctx.measureText(str[i]).width; 
@@ -32,7 +32,8 @@ function canvash(str,canvas,initX,initY,lineHeight){
             lastSubStrIndex=i;
         }
     }
-	canvas.height = initY + 50;
+	canvas.height = initY-270;
+	alert(canvas.height);
 	
 }
 function btClick(){
