@@ -33,7 +33,7 @@ function canvash(str,canvas,initX,initY,lineHeight){
         }
     }
 	canvas.height = initY-270;
-
+	alert(canvas.height);
 	
 }
 function btClick(){
@@ -45,7 +45,7 @@ function btClick(){
 
 	var image = new Image();
  image.src = c.toDataURL("image/png");
-
+image.crossOrigin = 'anonymous';
 document.getElementById('hide').style.display = "none";
 
 document.getElementById('test').appendChild(image);
