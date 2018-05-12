@@ -1,6 +1,6 @@
 function canvasTextAutoLine(str,canvas,initX,initY,lineHeight){
     var ctx = canvas.getContext("2d"); 
-	ctx.font="100px Verdana";
+	ctx.font="50px Verdana";
     var lineWidth = 0;
     var canvasWidth = canvas.width-100; 
     var lastSubStrIndex= 0; 
