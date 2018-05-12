@@ -4,11 +4,15 @@
    <meta charset="utf-8">
 </head>
 <body>
-<canvas id="myCanvas" width="800" height="800"></canvas>
+<canvas id="myCanvas" width="200" height="100"></canvas>
+<div id = "test"></div>
 <script type="text/javascript">
 var c=document.getElementById("myCanvas");
 var cxt=c.getContext("2d");
 cxt.fillStyle="#FF0000";
 cxt.fillRect(0,0,800,800);
+var image = new Image();
+ image.src = c.toDataURL("image/png");
+document.getElementById('test').appendChild(image);
 </script>
 </body></html>
