@@ -33,7 +33,6 @@ function canvash(str,canvas,initX,initY,lineHeight){
         }
     }
 	canvas.height = initY-270;
-	alert(canvas.height);
 	
 }
 function btClick(){
