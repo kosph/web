@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+        <style>
+		span{
+		color:red;}
+#hide{
+	text-align:center;
+}
+input{
+	margin-top:6em;
+	width:60%;
+	height:4em;
+	text-align:center;
+	font-size:40px;
+}
+button{
+	 font-family: 'Oswald', Arial, sans-serif;
+    background-color: #FF4081;
+    color: white;
+
+    border: none;
+	margin-top:4em;
+		width:60%;
+	height:4em;
+	text-align:center;
+	font-weight:bold;
+	font-size:40px;
+}
+            *{
+                margin: 0;
+            }
+            #test{
+                text-align: center;
+                line-height: 100px;
+                background-image:url(central-park.jpg);
+
+                vertical-align:top;
+			
+            }
+			#t1,#test{                display:none;
+			margin: 4em 25%;}
+
+			p{
+			
+			font-size:40px;}
+            canvas{
+                margin-right: 5px;
+            }
+        </style>
+    </head>
+    <body>
+    <div id="test"></div>
+     <div id = "t1"></div>
+	 <div id = "hide">
+		<input type = "text" id = "name" placeholder = "请输入你的名字"/><br/>
+		<button onclick = "btClick();">召唤你的专属故事</button>
+		</div>
+    <script src="html2canvas.js"></script>
+<script>
+function btClick(){
+
+	username = document.getElementById('name').value;
+	c.innerHTML = '<p>“就这样被你征服，切断了所有退路”<span>'+username+'</span>想着心中的那个她，优哉游哉，辗转反侧，深夜时起来唱《征服》，歌声响彻复旦的整栋宿舍楼。唱到高音时突然破嗓，然后整栋楼都沸腾起来……</p>';
+		document.getElementById('hide').style.display = "none";
+
+	c.style.display = "inline-block";
+    //直接选择要截图的dom，就能截图，但是因为canvas的原因，生成的图片模糊
+    html2canvas(document.querySelector('div')).then(function(canvas) {
+			var image = new Image();
+			image.src = canvas.toDataURL("image/png");
+document.getElementById('t1').appendChild(image);
+	c.style.display = "none";
+	document.getElementById('t1').style.display = "inline-block";
+
+
+     });
+}
+var c = document.getElementById('test');
+var username;
+</script>
+    </body>
+</html>
