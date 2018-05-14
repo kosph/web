@@ -1,0 +1,24 @@
+body{
+	text-align:center;
+}
+select{
+	width:300px;
+}
+input{
+	width:140px;
+	margin:0 5px;
+	
+}
+div{
+	text-align:center;
+}
+table{
+	display:inline-table;
+	
+	align:center;
+}
+th,td{
+padding: 0 0.5em;}th{
+	
+	background-color:grey;
+}

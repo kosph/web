@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="utf-8">
+   <title>Lab 07</title>
+   <link rel="stylesheet" href="./css/reset.css" />
+   <link rel="stylesheet" href="./css/Lab07.css" />
+<head>
+<body>
+	<select id="select1" name="select1" onchange = "selectOnchange(this.id)">
+	<option value="">SELECT ONE</option>
+	<option value="1">CREATE TABLE</option>
+	<option value="2">ADD ROW</option>
+	<option value="3">DELETE ROW</option>
+	<option value="4">DELETE TABLE</option>
+	</select>
+	
+	<div id = "d-input1">
+	</div>
+	<div id = "d-input2">
+	</div>
+	
+	<select id="select2" name="select2" onchange = "drawtables();">
+	<option value="">SELECT (default: last created)</option>
+	</select>
+	<div id = "d-table">
+	</div>
+	<script src="js/lab7.js" type="text/JavaScript"></script>
+</body>
+</html>
