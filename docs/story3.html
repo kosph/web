@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+        <style>
+		*{
+		font-family: Arial, "Microsoft YaHei", "微软雅黑";}
+		body{
+			background-image:url(bk.jpg);
+			background-attachment:fixed;
+			background-size:cover;
+		}
+		span{
+			color:black;
+		}
+		#hide{
+			text-align:center;
+		}
+		input{
+			margin-top:10em;
+			width:60%;
+			height:3em;
+			text-align:center;
+			font-size:30px;
+			border-radius:10px;
+		}
+		button{
+			font-family: 'Oswald', Arial, sans-serif;
+			background-color: #FF4081;
+			color: white;
+
+			border: none;
+			margin-top:3em;
+			width:60%;
+			height:3em;
+			text-align:center;
+			font-weight:bold;
+			font-size:30px;
+			border-radius:10px;
+		}
+		*{
+			margin: 0;
+		}
+		#t1{
+		border-radius:6px;
+			margin:2%;
+			width:96%;
+			display:none;
+			background-color:white;
+			box-shadow: 6px 6px 3px #bebebe;
+			
+		}
+		#test{
+			text-align: center;
+
+			background-image:url(bk.jpg);
+
+			background-size:100% 100%;
+			width:666px;
+			height:1000px;
+		
+		}
+		#t1,#test{ 
+			display:none;
+			margin: 2%;
+		}
+		#h3{
+		color:black;
+			font-size:20px;
+			margin:2%;
+		}
+		h1{
+			font-size:40px;
+			margin:2%;
+		}
+		p{
+			color:white;
+			margin-top:340px;
+			margin-left:60px;
+			margin-right:60px;
+			font-size:30px;
+			text-align:left;
+			line-height:50px;
+			letter-spacing:4px;
+		}
+		canvas{
+			margin-right: 5px;
+		}
+        </style>
+    </head>
+    <body>
+
+    <div id="test"></div>
+	<div id = "t1"><p id = "h3">你的专属十大故事</p>
+	<h1>长按保存你的结果图片吧</h1></div>
+	 <div id = "hide">
+		<input type = "text" id = "name" placeholder = "请输入你的名字"/><br/>
+		<button onclick = "btClick();">召唤你的专属故事</button>
+	</div>
+    <script src="html2canvas.js"></script>
+<script>
+function btClick(){
+	username = document.getElementById('name').value;
+	c.innerHTML = '<p>“就这样被你征服，切断了所有退路”<span>'+username+'</span>想着心中的那个她，优哉游哉，辗转反侧，深夜时起来唱《征服》，歌声响彻复旦的整栋宿舍楼。唱到高音时突然破嗓，然后整栋楼都沸腾起来……</p>';
+		document.getElementById('hide').style.display = "none";
+	c.style.display = "inline-block";
+    //直接选择要截图的dom，就能截图，但是因为canvas的原因，生成的图片模糊
+    html2canvas(document.getElementById('test')).then(function(canvas) {
+			var image = new Image();
+			image.src = canvas.toDataURL("image/png");
+document.getElementById('t1').appendChild(image);
+	c.style.display = "none";
+	document.getElementById('t1').style.display = "inline-block";
+     });
+}
+var c = document.getElementById('test');
+var username;
+</script>
+    </body>
+</html>
