@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+        <style>
+		#btyellow{
+		background-color:RGB(179,191,236);
+		margin:2%;
+		margin-bottom:5%;
+		width:96%;
+		}
+		*{
+		font-family: Arial, "Microsoft YaHei", "微软雅黑";}
+		body{
+
+		}
+		#mask2{
+			position:absolute;
+			left:0;
+			top:0;
+			z-index:-1;
+			height:100%;
+			width:100%;
+			background-image:url(bk.jpg);
+			background-size:100% 100%;
+			display:block;
+		}
+		#mask{
+			position:absolute;
+			left:0;
+			top:0;
+			z-index:100;
+			height:100%;
+			width:100%;
+			background-image:url(bk.jpg);
+			background-size:100% 100%;
+			display:block;
+			visibility:hidden;
+		}
+		#load{
+		width:20%;
+
+		margin-left:40%;
+		margin-top:79%;
+		}
+		span{
+			color:black;
+		}
+		#hide{
+		width:100%;
+		
+		height:100%;
+		display:block;
+			text-align:center;
+		}
+		input{
+			margin-top:55%;
+			width:60%;
+			height:3em;
+			text-align:center;
+			font-size:30px;
+			border-radius:10px;
+		}
+		button{
+			font-family: 'Oswald', Arial, sans-serif;
+			background-color: #FF4081;
+			color: white;
+
+			border: none;
+			margin-top:20%;
+			width:60%;
+			height:3em;
+			text-align:center;
+			font-weight:bold;
+			font-size:30px;
+			border-radius:10px;
+		}
+		*{
+			margin: 0;
+		}
+		#t1{
+			border-radius:6px;
+			margin:2%;
+			width:96%;
+			display:none;
+			background-color:white;
+			box-shadow: 6px 6px 3px #bebebe;
+			
+		}
+		#test{
+			text-align: center;
+
+			background-image:url(canvas-bg.jpg);
+
+			background-size:100% 100%;
+			width:666px;
+			height:1000px;
+		
+		}
+		#t1,#test{ 
+			display:none;
+			
+		}
+		img{margin:2%;
+		width:96%;}
+		#h3{
+		color:black;
+			font-size:20px;
+			margin:2%;
+		}
+		h1{
+			font-size:40px;
+			margin:2%;
+		}
+		p{
+			color:white;
+			margin-top:340px;
+			margin-left:60px;
+			margin-right:60px;
+			font-size:30px;
+			text-align:left;
+			line-height:50px;
+			letter-spacing:4px;
+		}
+		canvas{
+			margin-right: 5px;
+		}
+        </style>
+    </head>
+    <body>
+
+    <div id="test"></div>
+	<div id = "t1"><p id = "h3">你的专属十大故事</p>
+	<h1>长按保存你的结果图片吧</h1></div>
+	 <div id = "hide">
+		<input type = "text" id = "name" placeholder = "请输入你的名字"/><br/>
+		<button onclick = "btClick();">召唤你的专属故事</button>
+	</div>
+	<div id = "mask"><img id = "load" src = "load.gif"/></div>
+	<div id = "mask2"></div>
+	
+    <script src="html2canvas.js"></script>
+<script>
+function btClick(){
+	username = document.getElementById('name').value;
+	temp1 = Math.floor(Math.random()*15 + 1);
+	temp2 = str[temp1].length;
+	temp3 = '';
+	for(let i = 0;i<temp2;i++){
+	if(i!=0){
+			temp3+= username;
+		}
+		temp3 += str[temp1][i];
+		
+	}
+	c.innerHTML = temp3;
+		document.getElementById('hide').style.display = "none";
+		document.getElementsByTagName('body')[0].style.background='#f0f0f0';
+		mask.style.visibility = "visible";
+	c.style.display = "inline-block";
+    //直接选择要截图的dom，就能截图，但是因为canvas的原因，生成的图片模糊
+	setTimeout("draw()","1500");
+}
+function draw(){
+	html2canvas(document.getElementById('test')).then(function(canvas) {
+	c.style.display = "none";
+	var image = new Image();
+	image.src = canvas.toDataURL("image/png");
+	document.getElementById('t1').appendChild(image);
+	var bt = document.createElement('button');
+	bt.id = "btyellow";
+	bt.innerHTML = "点我去报名";
+	bt.onclick= function(){location.href='http://cn.mikecrm.com/riT9STF'};
+	bt.type="button";
+	document.getElementById('t1').appendChild(bt);
+	document.getElementById('t1').style.display = "inline-block";
+	mask.style.visibility = "hidden";
+	mask2.style.visibility = "hidden";
+});
+}
+var c = document.getElementById('test');
+var username;
+var mask = document.getElementById('mask');
+var mask2 = document.getElementById('mask2');
+var temp1;
+var temp2;
+var temp3;
+const str = [['<p>&emsp;&emsp;“就这样被你征服，切断了所有退路”<span>','</span>想着心中的那个她，优哉游哉，辗转反侧，深夜时起来唱《征服》，歌声响彻复旦的整栋宿舍楼。唱到高音时突然破嗓，然后整栋楼都沸腾起来……</p>'],
+ 
+['<p>&emsp;&emsp;“我真的好想你，在每一个雨季，你选择遗忘的，是我最不舍的。”<span>','</span>最近失恋了，内心忧伤，无人诉说。走在光草上，吹着光华楼前的冷风，<span>','</span>一直单曲循环这首歌，路人听了无不回眸抚慰，他们大概都是<span>','</span>的钟子期吧。</p>'],
+
+['<p>&emsp;&emsp;“说不上爱别说谎就一点喜欢，说不上恨别纠缠别装作感叹，就当作我太麻烦不停让自己受伤”<span>','</span>答应过宿舍里的小可爱要唱《说散就散》，立志成为新一代“抖音女王”。这天夜黑风高，<span>','</span>一个人站在复旦光华楼的电梯里，戴上耳机，边听边唱。由于控制不好自己的音量，歌声随着电梯一路下楼……从此<span>','</span>在光华楼出了名。</p>'],
+ 
+['<p>&emsp;&emsp;“确认过眼神，我遇见对的人。我策马出征，马蹄声如泪奔。”<span>','</span>参加了十大，在南区宿舍阳台上练唱《醉赤壁》。对面楼里的一个小姐姐听到歌声后，抱着吉他走出阳台，为之伴奏。无意中，他俩目光相遇……没错，是对的人。</p>'],
+ 
+['<p>&emsp;&emsp;“曾让你心疼的姑娘，如今已悄然无踪影，爱情总让你渴望又感到烦恼，曾让你遍体鳞伤，DiLiLi……”<span>','</span>在北区宿舍吃鸡的时候，情不自禁地唱起了歌，还忘记了关麦……。重点是<span>','</span>的歌实在是一言难尽，过了一会，队友全部把枪口指向<span>','</span>……砰砰砰……（最后队友们还是请<span>','</span>吃了饭来安慰这位内外俱伤的男人）</p>'],
+ 
+['<p>&emsp;&emsp;“听妈妈的话，别让她受伤”—远在复旦的<span>','</span>在母亲节那天，录了《听妈妈的话》的视频发给了妈妈，看到妈妈鼻头发红那一刻，竟然也有点想哭。</p>'],
+
+['<p>&emsp;&emsp;“终于等到你，还好我没放弃”—<span>','</span>在ktv向暗恋多年的人表白后紧张到手足无措，本以为会被拒绝，却听见ta的歌声响起。</p>'],
+
+['<p>&emsp;&emsp;“那些年错过的大雨，那些年错过的爱情”—又是一年高考时，<span>','</span>想起高中时候那个最好的ta，可惜现在已没有了联系，可惜有些话永远没机会再说出口。</p>'],
+
+['<p>&emsp;&emsp;“礼物不需挑最贵，只要香榭的落叶”—纪念日、生日、情人节、圣诞节，数不完的节日，送不完的礼物，吃不完的土…只想问ta，复旦的落叶可以吗？</p>'],
+
+['<p>&emsp;&emsp;“朋友一生一起走，那些日子不再有”—小学初中高中大学，<span>','</span>每一次要毕业的时候，总是以为要挣脱束缚往更大的天空去了，最后才发现，ta的朋友是ta永远的羁绊。</p>'],
+
+['<p>&emsp;&emsp;“梦想成真不会遥远，穿越时空，坚定向前，奇迹一定会出现”。到了期中季，每天肝高数大物到一点，到了考试前一天，依然啥都不会。<span>','</span>踏进教室的时候，脑中浮现出迪迦奥特曼的主题曲《奇迹再现》中的这句歌词，也许，这就是对学习的真爱吧。</p>'],
+
+['<p>&emsp;&emsp;“可惜不是你，等我到最后”<span>','</span>玩国王游戏，得到的任务是，和身边的玩家在《可惜不是你》的背景音乐中，握手深情对视30秒，<span>','</span>心中百味杂陈，毕竟对方是自己曾经的暗恋对象啊。</p>'],
+
+['<p>&emsp;&emsp;“引诱谁去大胆摘下禁果，甜美滋味闭眼偷咬一口”<span>','</span>打开B站，开始外放音量看视频，背景音乐是《威风堂堂》，转身母上正在身后，微笑注视，饱含了浓浓的爱意。</p>'],
+
+['<p>&emsp;&emsp;“吹呀吹呀我的骄傲放纵，吹啊吹不毁我纯净花园”<span>','</span>每次走过光华楼前，脑中都会浮现起那句歌词，想起每一个与TA漫步在光华楼妖风下的夜晚。</p>'],
+
+['<p>&emsp;&emsp;“想飞上天，和太阳肩并肩”<span>','</span>在寝室深情演绎此曲，被室友充满了室友情地怼回“你咋不上天”。</p>']
+
+
+];
+</script>
+    </body>
+</html>
