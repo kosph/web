@@ -4,6 +4,12 @@
         <meta charset="UTF-8">
         <title></title>
         <style>
+		#btyellow{
+		background-color:RGB(179,191,236);
+		margin:2%;
+		margin-bottom:5%;
+		width:96%;
+		}
 		*{
 		font-family: Arial, "Microsoft YaHei", "微软雅黑";}
 		body{
@@ -85,7 +91,7 @@
 		#test{
 			text-align: center;
 
-			background-image:url(bk.jpg);
+			background-image:url(canvas-bg.jpg);
 
 			background-size:100% 100%;
 			width:666px;
@@ -133,6 +139,7 @@
 	</div>
 	<div id = "mask"><img id = "load" src = "load.gif"/></div>
 	<div id = "mask2"></div>
+	
     <script src="html2canvas.js"></script>
 <script>
 function btClick(){
@@ -153,17 +160,24 @@ function btClick(){
 		mask.style.visibility = "visible";
 	c.style.display = "inline-block";
     //直接选择要截图的dom，就能截图，但是因为canvas的原因，生成的图片模糊
-    html2canvas(document.getElementById('test')).then(function(canvas) {
-
-			c.style.display = "none";
-			var image = new Image();
-			image.src = canvas.toDataURL("image/png");
-document.getElementById('t1').appendChild(image);
-
+	setTimeout("draw()","1500");
+}
+function draw(){
+	html2canvas(document.getElementById('test')).then(function(canvas) {
+	c.style.display = "none";
+	var image = new Image();
+	image.src = canvas.toDataURL("image/png");
+	document.getElementById('t1').appendChild(image);
+	var bt = document.createElement('button');
+	bt.id = "btyellow";
+	bt.innerHTML = "点我去报名";
+	bt.onclick= function(){location.href='http://cn.mikecrm.com/riT9STF'};
+	bt.type="button";
+	document.getElementById('t1').appendChild(bt);
 	document.getElementById('t1').style.display = "inline-block";
 	mask.style.visibility = "hidden";
 	mask2.style.visibility = "hidden";
-     });
+});
 }
 var c = document.getElementById('test');
 var username;
