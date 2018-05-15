@@ -7,9 +7,18 @@
 		*{
 		font-family: Arial, "Microsoft YaHei", "微软雅黑";}
 		body{
-			display:block;
+
+		}
+		#mask2{
+			position:absolute;
+			left:0;
+			top:0;
+			z-index:-1;
+			height:100%;
+			width:100%;
 			background-image:url(bk.jpg);
-			background-size:cover;
+			background-size:100% 100%;
+			display:block;
 		}
 		#mask{
 			position:absolute;
@@ -19,7 +28,7 @@
 			height:100%;
 			width:100%;
 			background-image:url(bk.jpg);
-			background-size:100%;
+			background-size:100% 100%;
 			display:block;
 			visibility:hidden;
 		}
@@ -33,6 +42,10 @@
 			color:black;
 		}
 		#hide{
+		width:100%;
+		
+		height:100%;
+		display:block;
 			text-align:center;
 		}
 		input{
@@ -119,6 +132,7 @@
 		<button onclick = "btClick();">召唤你的专属故事</button>
 	</div>
 	<div id = "mask"><img id = "load" src = "load.gif"/></div>
+	<div id = "mask2"></div>
     <script src="html2canvas.js"></script>
 <script>
 function btClick(){
@@ -148,11 +162,13 @@ document.getElementById('t1').appendChild(image);
 
 	document.getElementById('t1').style.display = "inline-block";
 	mask.style.visibility = "hidden";
+	mask2.style.visibility = "hidden";
      });
 }
 var c = document.getElementById('test');
 var username;
 var mask = document.getElementById('mask');
+var mask2 = document.getElementById('mask2');
 var temp1;
 var temp2;
 var temp3;
