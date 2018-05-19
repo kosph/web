@@ -231,6 +231,9 @@
 	<script>
 function btClick(){
 	document.body.scrollTop=0;
+	c.ontouchmove = function(e){e.preventDefault();};
+	mask.ontouchmove = function(e){e.preventDefault();};
+	mask4.ontouchmove = function(e){e.preventDefault();};
 	t1.style.display = "none";
 	mask.style.visibility = "visible";
 	mask4.style.visibility = 'visible';	
@@ -248,13 +251,13 @@ function btClick(){
 		temp3 += str[temp1][i];
 	}
 	
-	c.ontouchmove = function(e){e.preventDefault();};
+	
 	c.innerHTML = temp3;
 	c.style.display = "block";
 	p1 = document.getElementById('p');
 	p1.style.paddingRight = ((400-p1.offsetWidth) / 2)+"px";
 	
-	setTimeout(draw(),1000);
+	setTimeout(draw(),200);
 
 
 }
