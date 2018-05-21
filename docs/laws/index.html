@@ -312,6 +312,9 @@ function btClick(){
 function draw(){
 
 	html2canvas(c2).then(function(canvas) {
+	ctx = canvas.getContext('2d');
+	ctx.rotate(90*Math.PI/180);
+	ctx.fillText(2333);
 	let image = new Image();
 	image.src = canvas.toDataURL("image/jpg");
 	image.id = "generate";
@@ -360,7 +363,7 @@ function btClick2(){
 	mask4.style.visibility = "hidden";
 	
 }
-
+let ctx;
 let c = document.getElementById('test');
 		let c2 = document.getElementById('test2');
 let username;
