@@ -294,7 +294,7 @@ function draw(){
 
 	html2canvas(c2).then(function(canvas) {
 	let image = new Image();
-	image.src = canvas.toDataURL("image/png");
+	image.src = canvas.toDataURL("image/jpg");
 	image.id = "generate";
 	document.getElementById('t1').appendChild(image);
 	let bt = document.createElement('button');
@@ -329,7 +329,7 @@ function btClick2(){
 	
 	
 	html2canvas(c2).then(function(canvas) {
-		document.getElementById('generate').src = canvas.toDataURL("image/png");
+		document.getElementById('generate').src = canvas.toDataURL("image/jpg");
 	});
 	
 		c2.style.display = 'none';
