@@ -355,6 +355,7 @@ let count=0;
 let p1;
 let name = document.getElementById('name');
 let t1 = document.getElementById('t1');
+		let imgs = new Image();
 const str=[
 ['<p id = "p"><span>','</span>在&nbsp;1906年考入复旦公学，&nbsp;1909年成为复旦公学第二届毕业生，&nbsp;TA的卒业文凭现在是复旦大学校史馆的“镇馆之宝”。</p>'],
 ['<p id = "p"><span>','</span>哼着《国际歌》走过相辉堂前，广播却已经开始为新作打歌——“学术独立，思想自由，政罗教网无羁绊”，不说了，先回去学新歌了。TA还记得，那是&nbsp;1925年的一个秋天。</p>'],
@@ -399,6 +400,7 @@ divHide.ontouchend = function(e){let touch = e.changedTouches[0];
 
 document.title = "我与复旦法学的前世今生"
 		temp1 = Math.floor(Math.random()*(str.length-0.1));
+		imgs.src = (temp1+1)+'.jpg';
 	c.style.backgroundImage = "url("+(temp1+1)+'.jpg'+")";
 				 c.style.display = "block";
 }
