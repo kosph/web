@@ -331,7 +331,7 @@ function btClick2(){
 	html2canvas(c2).then(function(canvas) {
 		document.getElementById('generate').src = canvas.toDataURL("image/png");
 	});
-	c.style.display = 'none';
+	
 		c2.style.display = 'none';
 	t1.style.display = "inline-block";
 	temp1 = Math.floor(Math.random()*(str.length-0.1));
@@ -396,6 +396,7 @@ divHide.ontouchend = function(e){let touch = e.changedTouches[0];
 	}
 	temp1 = Math.floor(Math.random()*(str.length-0.1));
 	c.style.backgroundImage = "url("+(temp1+1)+'.jpg'+")";
+				 c.style.display = "block";
 }
 document.title = "我与复旦法学的前世今生"
 }
