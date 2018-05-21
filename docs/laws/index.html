@@ -7,10 +7,47 @@
         <meta charset="UTF-8">
 		<title>载入中...</title>
 		<style>
+		@keyframes arrow{
+		0% {
+    -webkit-transform: translateY(20%);
+    -moz-transform: translateY(20%);
+    -ms-transform: translateY(20%);
+    -o-transform: translateY(20%);
+    transform: translateY(20%);
+    opacity: 0;
+}
+60% {
+    -webkit-transform: translateY(-40%);
+    -moz-transform: translateY(-40%);
+    -ms-transform: translateY(-40%);
+    -o-transform: translateY(-40%);
+    transform: translateY(-40%);
+    opacity: 1;
+}
+100% {
+    -webkit-transform: translateY(-80%);
+    -moz-transform: translateY(-80%);
+    -ms-transform: translateY(-80%);
+    -o-transform: translateY(-80%);
+    transform: translateY(-80%);
+    opacity: 0;
+}
+}
 		 @font-face {
 		font-family: 'lixuke';
 		src:url('lixuke.ttf') format('truetype');
 		}
+		.inner{
+		animation: arrow 1.8s infinite;}
+		#div-arrow{
+		position: fixed;
+    bottom: 6%;
+    left: 50%;
+    margin-left: -15px;
+    width: 30px;
+    height: 30px;
+    opacity: .5;
+    z-index: 1000;}
 		 #name::-webkit-input-placeholder{
             color:white;
         }
@@ -205,7 +242,7 @@
 		.hidden{
 		display:none;}
 		#test2{
-			background-color:white
+		background-color:white;
 		width:400px;
 		display:none;}
         </style>
@@ -226,6 +263,8 @@
 	<div id = "mask2"></div>
 	<div id = "mask3"></div>
 	<div id = "mask4"></div>
+	<div id = "div-arrow">
+	<img class = "inner" src = "up_arrow.png"/></div>
 	<p class = "hidden">2</p>
 
     <script src="html2canvas.js"></script>
@@ -371,6 +410,7 @@ divHide.ontouchstart = function(e){let touch = e.touches[0];
 divHide.ontouchend = function(e){let touch = e.changedTouches[0];
 	if(y - touch.clientY>70){
 			hid.style.display = "block";
+			document.getElementById('div-arrow').style.visibility  = "hidden";
 		  $("#mask3").animate({top:"-100%"},800);
 		
 	}
