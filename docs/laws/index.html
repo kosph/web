@@ -314,6 +314,7 @@ function draw(){
 	html2canvas(c2).then(function(canvas) {
 	ctx = canvas.getContext('2d');
 	ctx.rotate(90*Math.PI/180);
+	ctx.fillStyle="#0000ff";
 	ctx.fillText(2333,200,330);
 	let image = new Image();
 	image.src = canvas.toDataURL("image/jpg");
