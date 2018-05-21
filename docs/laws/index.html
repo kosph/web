@@ -315,7 +315,7 @@ function draw(){
 	ctx = canvas.getContext('2d');
 
 
-	ctx.font="40px";
+	ctx.font="bold 40px";
 	ctx.fillStyle="#000000";
 	for(let i = 0;i<username.length;i++){
 	ctx.fillText(username.charAt(i),320,height);
@@ -359,8 +359,8 @@ function btClick2(){
 	html2canvas(c2).then(function(canvas) {
 		ctx = canvas.getContext('2d');
 
-	height = 450;
-	ctx.font="40px";
+	height = 430;
+	ctx.font="bold 40px";
 	ctx.fillStyle="#000000";
 	for(let i = 0;i<username.length;i++){
 	ctx.fillText(username.charAt(i),320,height);
@@ -442,7 +442,7 @@ document.title = "我与复旦法学的前世今生";
 	c.style.backgroundImage = "url("+(temp1+1)+'.jpg'+")";
 	c.style.display = "block";
 }
-		let height = 450;
+		let height = 430;
 	</script>
 	</body>
 </html>
