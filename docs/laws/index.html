@@ -204,6 +204,9 @@
 		}
 		.hidden{
 		display:none;}
+		#test2{
+		width:400px;
+		display:none;}
         </style>
 	</head>
     
@@ -251,6 +254,7 @@ function btClick(){
 	
 	c.innerHTML = temp3;
 	c.style.display = "block";
+	c2.style.display = "block";
 	p1 = document.getElementById('p');
 	p1.style.paddingRight = ((400-p1.offsetWidth) / 2)+"px";
 	
@@ -272,6 +276,7 @@ function draw(){
 	bt.type="button";
 	t1.appendChild(bt);
 	c.style.display = 'none';
+	c2.style.display = 'none';
 	t1.style.display = "inline-block";
 	temp1 = Math.floor(Math.random()*(str.length-0.1));
 	c.style.backgroundImage = "url("+(temp1+1)+'.jpg'+")";
@@ -298,6 +303,7 @@ function btClick2(){
 	c2.ontouchmove = function(e){e.preventDefault();};
 	c.innerHTML = temp3;
 	c.style.display = "block";
+	c2.style.display = "block";
 	p1 = document.getElementById('p');
 	p1.style.paddingRight = 0+"px";
 	p1.style.paddingRight = ((400-p1.offsetWidth) / 2)+"px";
@@ -306,6 +312,7 @@ function btClick2(){
 		document.getElementById('generate').src = canvas.toDataURL("image/png");
 	});
 	c.style.display = 'none';
+		c2.style.display = 'none';
 	t1.style.display = "inline-block";
 	temp1 = Math.floor(Math.random()*(str.length-0.1));
 	c.style.backgroundImage = "url("+(temp1+1)+'.jpg'+")";
