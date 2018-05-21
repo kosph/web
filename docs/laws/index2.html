@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html>
+    <head>
+	    <link rel='prefetch' href='lixuke.woff'>
+	<meta name="viewport" content="user-scalable=no" />
+	<meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0"/>
+        <meta charset="UTF-8">
+		<title>载入中...</title>
+		<style>
+		@keyframes arrow{
+		0% {
+    -webkit-transform: translateY(20%);
+    -moz-transform: translateY(20%);
+    -ms-transform: translateY(20%);
+    -o-transform: translateY(20%);
+    transform: translateY(20%);
+    opacity: 0;
+}
+60% {
+    -webkit-transform: translateY(-40%);
+    -moz-transform: translateY(-40%);
+    -ms-transform: translateY(-40%);
+    -o-transform: translateY(-40%);
+    transform: translateY(-40%);
+    opacity: 1;
+}
+100% {
+    -webkit-transform: translateY(-80%);
+    -moz-transform: translateY(-80%);
+    -ms-transform: translateY(-80%);
+    -o-transform: translateY(-80%);
+    transform: translateY(-80%);
+    opacity: 0;
+}
+}
+		 @font-face {
+		font-family: 'lixuke';
+		src:url('lixuke.ttf') format('truetype');
+		}
+		.inner{
+		animation: arrow 1.8s infinite;}
+		#div-arrow{
+		position: fixed;
+    bottom: 6%;
+    left: 50%;
+    margin-left: -15px;
+    width: 30px;
+    height: 30px;
+    opacity: .5;
+    z-index: 1000;}
+		 #name::-webkit-input-placeholder{
+            color:white;
+        }
+        #name::-moz-placeholder{   /* Mozilla Firefox 19+ */
+            color:white;
+        }
+        #name:-moz-placeholder{    /* Mozilla Firefox 4 to 18 */
+            color:white;
+        }
+        #name:-ms-input-placeholder{  /* Internet Explorer 10-11 */ 
+            color:white;
+        }
+		#name{
+		color:white;
+		border-top:0;
+		border-right:0;
+		border-left:0;
+		border-bottom:2px solid white;
+			background:none;
+			outline:none;	}
+		#btyellow{
+		color:black;
+		background-color:RGB(254,236,152);
+		margin:2%;
+		margin-bottom:5%;
+		width:96%;
+		}
+		*{
+		font-family: Arial, "Microsoft YaHei", "微软雅黑";}
+		body{
+			
+		}
+		
+		#mask3{
+			-webkit-background-size:100% ;
+			position:absolute;
+			left:0;
+			top:0;
+			z-index:600;
+			height:100%;
+			width:100%;
+			background-image:url(bg-v22.jpg);
+			background-position:center;
+			background-repeat:no-repeat;
+			background-size:100%;
+			display:block;
+		}
+		#mask2{
+			-webkit-background-size:100% ;
+			position:absolute;
+			left:0;
+			top:0;
+			z-index:-1;
+			height:100%;
+			width:100%;
+			background-image:url(bg-v2.jpg);
+			background-position:center;
+			background-repeat:no-repeat;
+			background-size:100%;
+			display:block;
+		}
+		#mask4{
+
+			position:absolute;
+			left:0;
+			top:0;
+			z-index:99;
+			height:100%;
+			width:100%;
+			background-color:white;
+			display:block;
+			visibility:hidden;
+		}
+		#mask{
+			-webkit-background-size:100% 100%;
+			position:absolute;
+			left:0;
+			top:0;
+			z-index:100;
+			height:100%;
+			width:100%;
+			background-repeat:no-repeat;
+			background-image:url(bg-v2.jpg);
+			background-size:100%;
+			background-position:center;
+			display:block;
+			visibility:hidden;
+		}
+		#load{
+		width:20%;
+
+		margin-left:40%;
+		margin-top:79%;
+		}
+		span{
+		font-family:Arial, "Microsoft YaHei", "微软雅黑";
+			color:black;
+		}
+		#hide{
+		width:100%;
+		
+		height:100%;
+		display:none;
+			text-align:center;
+		}
+		input{
+			margin-top:55%;
+			width:80%;
+			height:2.5em;
+			text-align:center;
+			font-size:20px;
+		}
+		button{
+			font-family: 'Oswald', Arial, sans-serif;
+			background-color: #FF4081;
+			color: white;
+			
+			border: none;
+			margin-top:20%;
+			width:60%;
+			height:2.7em;
+			text-align:center;
+			font-size:15px;
+			border-radius:8px;
+		}
+		*{
+			margin: 0;
+		}
+		#t1{
+			border-radius:6px;
+			margin:2%;
+			width:96%;
+			display:none;
+			background-color:white;
+			box-shadow: 6px 6px 3px #bebebe;
+			
+		}
+		#test{
+			vertical-align:middle;
+			text-align: center;
+			background-image:url(1.jpg);
+			-webkit-background-size:100%;
+			background-size:100%;
+			background-position:center;
+			background-repeat:no-repeat;
+			display:none;
+			width:400px;
+			height:1000px;
+		}
+		img{margin:2%;
+		width:96%;
+		}
+		#bg-img{
+		visibility:hidden;
+		}
+		#h3{
+			padding-top:20px;
+		color:black;
+			font-size:30px;
+			margin:2%;
+			font-weight:bold;
+			text-align:center;
+		}
+		h1{
+			font-size:15px;
+			margin:2%;
+			margin-top:0%;
+		}
+		p{
+			margin:0 auto;
+			vertical-align:middle;
+			text-align:center;
+			font-family:'lixuke';
+			padding:350px 0 160px 0px;
+			float:right;
+			writing-mode:vertical-rl;
+			color:black;
+			font-size:30px;
+			text-align:left;
+			line-height:40px;
+			letter-spacing:5px;
+			display:inline-block;
+
+		}
+		canvas{
+			margin-right: 5px;
+		}
+		#btRan{
+		background-color: RGB(186,187,191);
+		border:1px solid white;
+		outline:none;
+		}
+		.hidden{
+		display:none;}
+		#test2{
+		background-color:white;
+		width:400px;
+		display:none;}
+        </style>
+	</head>
+    
+    <body onload = 'finish();'>
+	<div id = "test2">
+	<section id = "h3">法律人的时光书签</section>
+	    <div id="test"></div>
+	</div>
+	<div id = "t1">
+	<h1>长按保存你的结果图片吧</h1></div>
+	<div id = "hide">
+		<input type = "text" id = "name" placeholder = "请输入你的名字"/><br/>
+		<button id = "btRan"onclick = "btClick();">抽取你的专属签文</button>
+	</div>
+	<div id = "mask"><img id = "load" src = "load.gif"/></div>
+	<div id = "mask2"></div>
+	<div id = "mask3"></div>
+	<div id = "mask4"></div>
+	<div id = "div-arrow">
+	<img class = "inner" src = "up_arrow.png"/></div>
+	<p class = "hidden">2</p>
+
+    <script src="html2canvas.js"></script>
+	<script src="jquery-3.3.1.js"></script>
+	<script>
+function btClick(){
+	document.body.scrollTop=0;
+	c2.ontouchmove = function(e){e.preventDefault();};
+	mask.ontouchmove = function(e){e.preventDefault();};
+	mask4.ontouchmove = function(e){e.preventDefault();};
+	t1.style.display = "none";
+	mask.style.visibility = "visible";
+	mask4.style.visibility = 'visible';	
+	hid.style.display = "none";
+	
+	username = name.value;
+	
+	temp2 = str[temp1].length;
+	
+	temp3 = '';
+	for(let i = 0;i<temp2;i++){
+		if(i!=0)
+			temp3+= username;
+		temp3 += str[temp1][i];
+	}
+	
+	
+	c.innerHTML = temp3;
+	c.style.display = "block";
+	c2.style.display = "block";
+	p1 = document.getElementById('p');
+	p1.style.paddingRight = ((400-p1.offsetWidth) / 2)+"px";
+	
+	setTimeout(draw(),200);
+
+
+}
+function draw(){
+
+	html2canvas(c2).then(function(canvas) {
+	let image = new Image();
+	image.src = canvas.toDataURL("image/png");
+	image.id = "generate";
+	document.getElementById('t1').appendChild(image);
+	let bt = document.createElement('button');
+	bt.id = "btyellow";
+	bt.innerHTML = "换  一  签";
+	bt.onclick= function(){btClick2();};
+	bt.type="button";
+	t1.appendChild(bt);
+
+	t1.style.display = "inline-block";
+	temp1 = Math.floor(Math.random()*(str.length-0.1));
+	c.style.backgroundImage = "url("+(temp1+1)+'.jpg'+")";
+	mask2.style.visibility = "hidden";
+	mask.style.visibility = "hidden";
+	mask4.style.visibility = "hidden";
+	count++;
+});
+}
+function btClick2(){
+	document.body.scrollTop=0;
+	t1.style.display = "none";
+	mask.style.visibility = "visible";
+	mask4.style.visibility = 'visible';	
+	hid.style.display = "none";
+	
+	temp2 = str[temp1].length;
+	temp3 = '';
+	for(let i = 0;i<temp2;i++){
+		if(i!=0)
+			temp3+= username;
+		temp3 += str[temp1][i];
+	}
+	c2.ontouchmove = function(e){e.preventDefault();};
+	c.innerHTML = temp3;
+	c.style.display = "block";
+	c2.style.display = "block";
+	p1 = document.getElementById('p');
+	p1.style.paddingRight = 0+"px";
+	p1.style.paddingRight = ((400-p1.offsetWidth) / 2)+"px";
+	
+	html2canvas(c2).then(function(canvas) {
+		document.getElementById('generate').src = canvas.toDataURL("image/png");
+	});
+	c.style.display = 'none';
+		c2.style.display = 'none';
+	t1.style.display = "inline-block";
+	temp1 = Math.floor(Math.random()*(str.length-0.1));
+	c.style.backgroundImage = "url("+(temp1+1)+'.jpg'+")";
+	mask2.style.visibility = "hidden";
+	mask.style.visibility = "hidden";
+	mask4.style.visibility = "hidden";
+	
+}
+
+let c = document.getElementById('test');
+		let c2 = document.getElementById('test2');
+let username;
+let mask = document.getElementById('mask');
+let mask2 = document.getElementById('mask2');
+let mask4 = document.getElementById('mask4');
+let temp1;
+let temp2;
+let temp3;
+let count=0;
+let p1;
+let name = document.getElementById('name');
+let t1 = document.getElementById('t1');
+const str=[
+['<p id = "p"><span>','</span>在&nbsp;1906年考入复旦公学，&nbsp;1909年成为复旦公学第二届毕业生，&nbsp;TA的卒业文凭现在是复旦大学校史馆的“镇馆之宝”。</p>'],
+['<p id = "p"><span>','</span>哼着《国际歌》走过相辉堂前，广播却已经开始为新作打歌——“学术独立，思想自由，政罗教网无羁绊”，不说了，先回去学新歌了。TA还记得，那是&nbsp;1925年的一个秋天。</p>'],
+['<p id = "p"><span>','</span>偶然穿越回了&nbsp;1982年的江湾，在大草原上奔跑寻找时空出口时被一块石头绊倒，&nbsp;360度无死角认真研究一番，原来是&nbsp;1920年&nbsp;12月江湾校园奠基典礼的江湾奠基石。</p>'],
+['<p id = "p"><span>','</span>被同学戏称为 “追星大师”，如今回想起自己的三十多年的追星之旅，最感慨的莫过于三十四年前的三教门前邂逅的那一幕“里根与猫”的定格——原来男神就在眼前，只是汝还未知罢了。</p>'],
+['<p id = "p"><span>','</span>还是那个年少无知的懵懂少年，还曾经嘲笑着拿行李箱装书，穿梭于宿舍和图书馆之间的学长学姐们。某年的期末季，看着堆满书桌的复习材料，终于含泪拿出了自己的&nbsp;32寸行李箱。</p>'],
+['<p id = "p"><span>','</span>在大草原已经走过了一些年头，但尽管如此，在被各种DDL支配的恐惧下，只要在草原上走走，就觉得，一切总会好的。</p>'],
+['<p id = "p"><span>','</span>是&nbsp;86届法律系毕业生，在离校三十年之际，与同届所有同学一起，赠送了法学院一尊鼎。每每走进廖凯原法学楼，总能见到它，岿然于斯，正如法律人心中的公平正义一般，不可动摇。</p>'],
+['<p id = "p"><span>','</span>不管在多少年之后，每当想起法学启蒙书，第一个蹦出来的就是一本叫《西窗法雨》的书。</p>'],
+['<p id = "p"><span>','</span>对于一楼钢琴房最深的印象，除了每周好看的钢伴姐姐和甜甜的水果，就是老爷子的一声声“丫头们！”</p>'],
+
+['<p id = "p"><span>','</span> 百年前是严复手中的纸笔，写下“法，自其最大之义而言之，出于万物自然之理……”，与时任复旦公学校长的严复一同见证了《法意》的翻译，见证了法的精神，见证了旧制度与新思想的碰撞。</p>'],
+['<p id = "p"><span>','</span>挠了挠头，在&nbsp;JB101目光呆滞地看着电脑，桌面上是数不清的&nbsp;DDL，地上是散落的乌黑秀发……</p>'],
+['<p id = "p"><span>','</span>漫步江湾，春风拂面，路过智华楼，石楠花的香气迎面飘来</p>'],
+['<p id = "p"><span>','</span>在行政楼琴房跟随指挥唱出动人的旋律，回忆涌上心头，想起那无数次风雨兼程的“一·二九” 排练，想起自己站在正大放声歌唱的夜晚。</p>'],
+['<p id = "p"><span>','</span>每天早起的动力是江湾食堂的煎饼果子。在江湾食堂吃的三餐从没让人失望过，一楼小食堂点麻辣烫，二楼的麻辣香锅，还有三楼的桂花糖藕，还有……想到这里就很饿了。</p>'],
+['<p id = "p"><span>','</span>在去年法律人节，被部长拉去做志愿者，那天，&nbsp;TA把茶歇一轮又一轮吃了个爽。</p>'],
+['<p id = "p"><span>','</span>在曾经那些无知的岁月里，幻想早起读英语可以在小树林偶遇梦中情人。后来，TA LSAT上了170，一个人。</p>'],
+['<p id = "p"><span>','</span>总是大声疾呼人间疾苦与家国情怀，睡觉时苦恼于羞涩的钱包，那会儿，TA大一；后来，TA闷声不响地做着养家糊口的工作，但入睡前还是会在小本本上疾呼人间疾苦与家国情怀。少年不死。</p>'],
+['<p id = "p"><span>','</span>上学时是班里篮球队的。十年后，微胖的&nbsp;TA拿出当年的队服，看着上面印着“Fudan LAW”的字样，还是会傻傻发笑。</p>'],
+['<p id = "p"><span>','</span>在&nbsp;72年前的某个夜晚，和梅汝璈大法官一同走出居酒屋，夜晚的东京弥漫着战争给这个国家所留下的凄凉。但&nbsp;TA更无法忘却祖国更加惨烈的伤痛。无论这场对日本法西斯的审判要持续多久，都要将正义带回祖国。</p>'],
+['<p id = "p"><span>','</span>一直到进了法学院，才知道“獬豸”这两个字怎么念。</p>'],
+['<p id = "p"><span>','</span>在刚大二的时候，一度想要瘦成一匹草原上的孤狼。可事实证明TA被食堂二楼的麻辣香锅喂成了傻呵呵的二哈。</p>']
+
+];
+let x,y;
+let divHide = document.getElementById('mask3');
+let hid = document.getElementById('hide');
+function finish(){
+divHide.ontouchstart = function(e){let touch = e.touches[0];
+	y=touch.clientY;
+}
+divHide.ontouchend = function(e){let touch = e.changedTouches[0];
+	if(y - touch.clientY>70){
+			hid.style.display = "block";
+			document.getElementById('div-arrow').style.visibility  = "hidden";
+		  $("#mask3").animate({top:"-100%"},800);
+		
+	}
+	temp1 = Math.floor(Math.random()*(str.length-0.1));
+	c.style.backgroundImage = "url("+(temp1+1)+'.jpg'+")";
+}
+document.title = "我与复旦法学的前世今生"
+}
+	</script>
+	</body>
+</html>
