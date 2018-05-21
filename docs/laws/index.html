@@ -247,7 +247,7 @@
 			text-align:left;
 			line-height:40px;
 			letter-spacing:5px;
-			display:inline-block;
+			display:block;
 		}
 		canvas{
 			margin-right: 5px;
@@ -301,7 +301,7 @@ function btClick(){
 
 	
 	
-	c.innerHTML = '<p>'+username+'</p>';
+	c.innerHTML = '<div id='div-n'>'+username+'</div>';
 	c.style.display = "block";
 	c2.style.display = "block";
 	
@@ -340,8 +340,8 @@ function btClick2(){
 	mask4.style.visibility = 'visible';	
 	hid.style.display = "none";
 	
-	c2.ontouchmove = function(e){e.preventDefault();};
-	c.innerHTML = '<p>'+username+'</p>';
+	c2.ontouchmove = function(e){e.preventDefault();
+				            c.innerHTML = '<div id='div-n'>'+username+'</div>'; 
 	c.style.display = "block";
 	c2.style.display = "block";
 
