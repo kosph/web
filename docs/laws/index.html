@@ -315,10 +315,10 @@ function draw(){
 	ctx = canvas.getContext('2d');
 
 
-	ctx.font="40px Arial";
+	ctx.font="40px";
 	ctx.fillStyle="#000000";
 	for(let i = 0;i<username.length;i++){
-	ctx.fillText(username.charAt(i),330,height);
+	ctx.fillText(username.charAt(i),320,height);
 	height+=50;
 	}
 	let image = new Image();
@@ -360,10 +360,10 @@ function btClick2(){
 		ctx = canvas.getContext('2d');
 
 	height = 450;
-	ctx.font="40px Arial";
+	ctx.font="40px";
 	ctx.fillStyle="#000000";
 	for(let i = 0;i<username.length;i++){
-	ctx.fillText(username.charAt(i),330,height);
+	ctx.fillText(username.charAt(i),320,height);
 	height+=50;
 	}
 		document.getElementById('generate').src = canvas.toDataURL("image/jpg");
