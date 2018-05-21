@@ -33,11 +33,9 @@
     opacity: 0;
 }
 }
-		 @font-face {
-		font-family: 'lixuke';
-		src:url('lixuke.ttf') format('truetype');
-		}
+
 		.inner{
+			-webkit-animation:arrow 1.8s infinite;
 		animation: arrow 1.8s infinite;}
 		#div-arrow{
 		position: fixed;
@@ -204,7 +202,6 @@
 		visibility:hidden;
 		}
 		#h3{
-			padding-top:20px;
 		color:black;
 			font-size:30px;
 			margin:2%;
@@ -220,8 +217,8 @@
 			margin:0 auto;
 			vertical-align:middle;
 			text-align:center;
-			font-family:'lixuke';
-			padding:350px 0 160px 0px;
+
+			padding:350px 50px 160px 0px;
 			float:right;
 			writing-mode:vertical-rl;
 			color:black;
@@ -266,7 +263,6 @@
 	<div id = "mask4"></div>
 	<div id = "div-arrow">
 	<img class = "inner" src = "up_arrow.png"/></div>
-	<p class = "hidden">2</p>
 
     <script src="html2canvas.js"></script>
 	<script src="jquery-3.3.1.js"></script>
@@ -282,22 +278,12 @@ function btClick(){
 	hid.style.display = "none";
 	
 	username = name.value;
-	
-	temp2 = str[temp1].length;
-	
-	temp3 = '';
-	for(let i = 0;i<temp2;i++){
-		if(i!=0)
-			temp3+= username;
-		temp3 += str[temp1][i];
-	}
+
 	
 	
-	c.innerHTML = temp3;
+	c.innerHTML = '<p><span>'+username+'</span></p>';
 	c.style.display = "block";
 	c2.style.display = "block";
-	p1 = document.getElementById('p');
-	p1.style.paddingRight = ((400-p1.offsetWidth) / 2)+"px";
 	
 	setTimeout(draw(),200);
 
@@ -334,20 +320,12 @@ function btClick2(){
 	mask4.style.visibility = 'visible';	
 	hid.style.display = "none";
 	
-	temp2 = str[temp1].length;
-	temp3 = '';
-	for(let i = 0;i<temp2;i++){
-		if(i!=0)
-			temp3+= username;
-		temp3 += str[temp1][i];
-	}
 	c2.ontouchmove = function(e){e.preventDefault();};
-	c.innerHTML = temp3;
+	c.innerHTML = '<p><span>'+username+'</span></p>';
 	c.style.display = "block";
 	c2.style.display = "block";
-	p1 = document.getElementById('p');
-	p1.style.paddingRight = 0+"px";
-	p1.style.paddingRight = ((400-p1.offsetWidth) / 2)+"px";
+
+	
 	
 	html2canvas(c2).then(function(canvas) {
 		document.getElementById('generate').src = canvas.toDataURL("image/png");
