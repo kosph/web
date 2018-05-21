@@ -171,6 +171,7 @@
 			font-size:30px;
 			margin:2%;
 			font-weight:bold;
+			text-align:center;
 		}
 		h1{
 			font-size:15px;
@@ -207,8 +208,11 @@
 	</head>
     
     <body onload = 'finish();'>
-	<div id="test"></div>
-	<div id = "t1"><section id = "h3">法律人的时光书签</section>
+	<div id = "test2">
+	<section id = "h3">法律人的时光书签</section>
+	    <div id="test"></div>
+	</div>
+	<div id = "t1">
 	<h1>长按保存你的结果图片吧</h1></div>
 	<div id = "hide">
 		<input type = "text" id = "name" placeholder = "请输入你的名字"/><br/>
@@ -225,7 +229,7 @@
 	<script>
 function btClick(){
 	document.body.scrollTop=0;
-	c.ontouchmove = function(e){e.preventDefault();};
+	c2.ontouchmove = function(e){e.preventDefault();};
 	mask.ontouchmove = function(e){e.preventDefault();};
 	mask4.ontouchmove = function(e){e.preventDefault();};
 	t1.style.display = "none";
@@ -256,7 +260,7 @@ function btClick(){
 }
 function draw(){
 
-	html2canvas(c).then(function(canvas) {
+	html2canvas(c2).then(function(canvas) {
 	let image = new Image();
 	image.src = canvas.toDataURL("image/png");
 	image.id = "generate";
@@ -291,14 +295,14 @@ function btClick2(){
 			temp3+= username;
 		temp3 += str[temp1][i];
 	}
-	c.ontouchmove = function(e){e.preventDefault();};
+	c2.ontouchmove = function(e){e.preventDefault();};
 	c.innerHTML = temp3;
 	c.style.display = "block";
 	p1 = document.getElementById('p');
 	p1.style.paddingRight = 0+"px";
 	p1.style.paddingRight = ((400-p1.offsetWidth) / 2)+"px";
 	
-	html2canvas(c).then(function(canvas) {
+	html2canvas(c2).then(function(canvas) {
 		document.getElementById('generate').src = canvas.toDataURL("image/png");
 	});
 	c.style.display = 'none';
@@ -312,6 +316,7 @@ function btClick2(){
 }
 
 let c = document.getElementById('test');
+		let c2 = document.getElementById('test2');
 let username;
 let mask = document.getElementById('mask');
 let mask2 = document.getElementById('mask2');
