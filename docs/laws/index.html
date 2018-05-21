@@ -215,7 +215,7 @@
 			margin-top:0%;
 		}
 		p{
-			word-break:break-all;
+		word-break:break-all;
 			margin:0 auto;
 			vertical-align:middle;
 			text-align:center;
@@ -231,6 +231,23 @@
 			letter-spacing:5px;
 			display:inline-block;
 
+		}
+		#div-n{
+		word-break:break-all;
+		margin:0 auto;
+			vertical-align:middle;
+			text-align:center;
+
+			padding:350px 40px 160px 0px;
+			float:right;
+			width:30px;
+			color:black;
+			font-size:30px;
+			font-weight:bold;
+			text-align:left;
+			line-height:40px;
+			letter-spacing:5px;
+			display:inline-block;
 		}
 		canvas{
 			margin-right: 5px;
@@ -272,9 +289,9 @@
 	<script>
 function btClick(){
 	document.body.scrollTop=0;
-	c2.ontouchmove = function(e){e.preventDefault();};
-	mask.ontouchmove = function(e){e.preventDefault();};
-	mask4.ontouchmove = function(e){e.preventDefault();};
+	//c2.ontouchmove = function(e){e.preventDefault();};
+	//mask.ontouchmove = function(e){e.preventDefault();};
+	//mask4.ontouchmove = function(e){e.preventDefault();};
 	t1.style.display = "none";
 	mask.style.visibility = "visible";
 	mask4.style.visibility = 'visible';	
@@ -289,7 +306,9 @@ function btClick(){
 	c2.style.display = "block";
 	
 	setTimeout(draw(),200);
-
+	mask2.style.visibility = "hidden";
+	mask.style.visibility = "hidden";
+	mask4.style.visibility = "hidden";
 
 }
 function draw(){
@@ -305,8 +324,8 @@ function draw(){
 	bt.onclick= function(){btClick2();};
 	bt.type="button";
 	t1.appendChild(bt);
-	c.style.display = 'none';
-	c2.style.display = 'none';
+	//c.style.display = 'none';
+	//c2.style.display = 'none';
 	t1.style.display = "inline-block";
 	temp1 = Math.floor(Math.random()*(str.length-0.1));
 	c.style.backgroundImage = "url("+(temp1+1)+'.jpg'+")";
