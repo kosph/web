@@ -406,7 +406,7 @@ let hid = document.getElementById('hide');
 function finish(){
 divHide.ontouchstart = function(e){let touch = e.touches[0];
 	y=touch.clientY;
-}
+};
 divHide.ontouchend = function(e){let touch = e.changedTouches[0];
 	if(y - touch.clientY>70){
 			hid.style.display = "block";
@@ -415,13 +415,13 @@ divHide.ontouchend = function(e){let touch = e.changedTouches[0];
 		
 	}
 
-}
+};
 
-document.title = "我与复旦法学的前世今生"
+document.title = "我与复旦法学的前世今生";
 		temp1 = Math.floor(Math.random()*(str.length-0.1));
 		imgs.src = (temp1+1)+'.jpg';
 	c.style.backgroundImage = "url("+(temp1+1)+'.jpg'+")";
-				 c.style.display = "block";
+	c.style.display = "block";
 }
 	</script>
 	</body>
