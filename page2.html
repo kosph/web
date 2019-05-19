@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html>
+    <head>
+	    <link rel='prefetch' href='lixuke.woff'>
+	<meta name="viewport" content="user-scalable=no" />
+	<meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0"/>
+        <meta charset="UTF-8">
+		<title>载入中...</title>
+		<style>
+		@keyframes arrow{
+		0% {
+    -webkit-transform: translateY(20%);
+    -moz-transform: translateY(20%);
+    -ms-transform: translateY(20%);
+    -o-transform: translateY(20%);
+    transform: translateY(20%);
+    opacity: 0;
+}
+60% {
+    -webkit-transform: translateY(-40%);
+    -moz-transform: translateY(-40%);
+    -ms-transform: translateY(-40%);
+    -o-transform: translateY(-40%);
+    transform: translateY(-40%);
+    opacity: 1;
+}
+100% {
+    -webkit-transform: translateY(-80%);
+    -moz-transform: translateY(-80%);
+    -ms-transform: translateY(-80%);
+    -o-transform: translateY(-80%);
+    transform: translateY(-80%);
+    opacity: 0;
+}
+}
+		 @font-face {
+		font-family: 'lixuke';
+		src:url('lixuke.ttf') format('truetype');
+		}
+		.inner{
+		animation: arrow 1.8s infinite;}
+		#div-arrow{
+		position: fixed;
+    bottom: 6%;
+    left: 50%;
+    margin-left: -15px;
+    width: 30px;
+    height: 30px;
+    opacity: .5;
+    z-index: 998;}
+		 #name::-webkit-input-placeholder{
+            color:white;
+        }
+        #name::-moz-placeholder{   /* Mozilla Firefox 19+ */
+            color:white;
+        }
+        #name:-moz-placeholder{    /* Mozilla Firefox 4 to 18 */
+            color:white;
+        }
+        #name:-ms-input-placeholder{  /* Internet Explorer 10-11 */ 
+            color:white;
+        }
+		#name{
+		color:white;
+		border-top:0;
+		border-right:0;
+		border-left:0;
+		border-bottom:2px solid white;
+			background:none;
+			outline:none;	}
+		#btyellow{
+		color:black;
+		background-color:RGB(254,236,152);
+		margin:2%;
+		margin-bottom:5%;
+		width:96%;
+		}
+		*{
+		font-family: Arial, "Microsoft YaHei", "微软雅黑";}
+		body{
+			
+		}
+		
+		#mask3{
+			-webkit-background-size:100% ;
+			position:absolute;
+			left:0;
+			top:0;
+			z-index:600;
+			height:100%;
+			width:100%;
+			background-image:url(page2.png);
+			background-position:center;
+			background-repeat:no-repeat;
+			background-size:100%;
+			display:block;
+		}
+		#mask2{
+			-webkit-background-size:100% ;
+			position:absolute;
+			left:0;
+			top:0;
+			z-index:-1;
+			height:100%;
+			width:100%;
+			background-image:url(page3.png);
+			background-position:center;
+			background-repeat:no-repeat;
+			background-size:100%;
+			display:block;
+		}
+		#mask4{
+
+			position:absolute;
+			left:0;
+			top:0;
+			z-index:99;
+			height:100%;
+			width:100%;
+			background-color:white;
+			display:block;
+			visibility:hidden;
+		}
+		#mask4{
+
+			position:absolute;
+			left:0;
+			top:0;
+			z-index:9999;
+			height:100%;
+			width:100%;
+			background-color:white;
+			display:block;
+		}
+		#mask{
+			-webkit-background-size:100% 100%;
+			position:absolute;
+			left:0;
+			top:0;
+			z-index:100;
+			height:100%;
+			width:100%;
+			background-repeat:no-repeat;
+			background-image:url(page3.png);
+			background-size:100%;
+			background-position:center;
+			display:block;
+			visibility:hidden;
+		}
+		#load{
+		width:20%;
+
+		margin-left:40%;
+		margin-top:79%;
+		}
+		#mask5{
+			-webkit-background-size:100% ;
+			position:absolute;
+			left:0;
+			top:0;
+			z-index:999;
+			height:100%;
+			width:100%;
+			background-image:url(page1.png);
+			background-position:center;
+			background-repeat:no-repeat;
+			background-size:100%;
+			display:block;
+		}
+		span{
+		font-family:Arial, "Microsoft YaHei", "微软雅黑";
+			color:black;
+		}
+		#hide{
+			width:100%;
+
+			
+			height:100%;
+			text-align:center;
+		}
+		input{
+			margin-top:56%;
+			margin-left:8.5%;
+			width:30%;
+			height:4%;
+			
+			color:black;
+			background-color:white;
+			outline: none;
+			font-size:20px;
+			border:none;
+		}
+		button{
+			font-family:  Arial, sans-serif;
+			background-color: rgb(87,155,255);
+			color: white;
+			font-weight:bold;
+			border: none;
+			margin-top:33%;
+			width:33%;
+			height:2.7em;
+			text-align:center;
+			font-size:15px;
+
+		}
+		*{
+			margin: 0;
+		}
+		#t1{
+			border-radius:6px;
+			margin:2%;
+			width:96%;
+			display:none;
+			background-color:white;
+			box-shadow: 6px 6px 3px #bebebe;
+			
+		}
+		#test{
+			vertical-align:middle;
+			text-align: center;
+			background-image:url(1.jpg);
+			-webkit-background-size:100%;
+			background-size:100%;
+			background-position:center;
+			background-repeat:no-repeat;
+			display:none;
+			width:400px;
+			height:1000px;
+		}
+		img{margin:2%;
+		width:96%;
+		}
+		#bg-img{
+		visibility:hidden;
+		}
+		#h3{
+			padding-top:20px;
+		color:black;
+			font-size:30px;
+			margin:2%;
+			font-weight:bold;
+			text-align:center;
+		}
+		h1{
+			font-size:15px;
+			margin:2%;
+			margin-top:0%;
+		}
+		p{
+			margin:0 auto;
+			vertical-align:middle;
+			text-align:center;
+			font-family:'lixuke';
+			padding:350px 0 160px 0px;
+			float:right;
+			writing-mode:vertical-rl;
+			color:black;
+			font-size:30px;
+			text-align:left;
+			line-height:40px;
+			letter-spacing:5px;
+			display:inline-block;
+
+		}
+		canvas{
+			margin-right: 5px;
+		}
+		#btRan{
+		background-color: RGB(186,187,191);
+		border:1px solid white;
+		outline:none;
+		}
+		.hidden{
+		display:none;}
+		#test2{
+		background-color:white;
+		width:400px;
+		display:none;}
+        </style>
+	</head>
+    
+    <body onload = 'finish();'>
+	<div id = "test2">
+	    <div id="test"></div>
+	</div>
+	<div id = "t1">
+	<h1>长按保存你的结果图片吧</h1></div>
+
+	<div id = "mask5">
+		<div id = "hide">
+		
+		<input type = "text" id = "my_name" name = "name" placeholder = ""/><br/>
+		<button id = "my_bt"onclick = "btClick();">登录</button>
+
+	</div></div>
+	<div id = "mask"><img id = "load" src = "load.gif"/></div>
+	<div id = "mask2"></div>
+	<div id = "mask3"></div>
+	<div id = "mask4"></div>
+	<div id = "mask6"></div>
+	<div id = "div-arrow">
+	<img class = "inner" src = "up_arrow.png"/></div>
+	<p class = "hidden">2</p>
+
+    <script src="html2canvas.js"></script>
+	<script src="jquery-3.3.1.js"></script>
+	<script>
+function btClick(){
+	document.body.scrollTop=0;
+	t1.style.display = "none";
+	mask.style.visibility = "visible";
+	mask4.style.visibility = 'visible';	
+	hid.style.display = "none";
+	
+	username = name.value;
+	
+	temp2 = str[temp1].length;
+	
+	temp3 = '';
+	for(let i = 0;i<temp2;i++){
+		if(i!=0)
+			temp3+= username;
+		temp3 += str[temp1][i];
+	}
+	
+	
+	c.innerHTML = temp3;
+	c.style.display = "block";
+	c2.style.display = "block";
+	p1 = document.getElementById('p');
+	p1.style.paddingRight = ((400-p1.offsetWidth) / 2)+"px";
+	
+	setTimeout(draw(),200);
+
+
+}
+function draw(){
+
+	html2canvas(c2).then(function(canvas) {
+	let image = new Image();
+	image.src = canvas.toDataURL("image/png");
+	image.id = "generate";
+	document.getElementById('t1').appendChild(image);
+	let bt = document.createElement('button');
+	bt.id = "btyellow";
+	bt.innerHTML = "换  一  签";
+	bt.onclick= function(){btClick2();};
+	bt.type="button";
+	t1.appendChild(bt);
+
+	t1.style.display = "inline-block";
+	temp1 = Math.floor(Math.random()*(str.length-0.1));
+	c.style.backgroundImage = "url("+(temp1+1)+'.jpg'+")";
+	mask2.style.visibility = "hidden";
+	mask.style.visibility = "hidden";
+	mask4.style.visibility = "hidden";
+	count++;
+});
+}
+function btClick2(){
+	document.body.scrollTop=0;
+	t1.style.display = "none";
+	mask.style.visibility = "visible";
+	mask4.style.visibility = 'visible';	
+
+	
+	temp2 = str[temp1].length;
+	temp3 = '';
+	for(let i = 0;i<temp2;i++){
+		if(i!=0)
+			temp3+= username;
+		temp3 += str[temp1][i];
+	}
+	c2.ontouchmove = function(e){e.preventDefault();};
+	c.innerHTML = temp3;
+	c.style.display = "block";
+	c2.style.display = "block";
+	p1 = document.getElementById('p');
+	p1.style.paddingRight = 0+"px";
+	p1.style.paddingRight = ((400-p1.offsetWidth) / 2)+"px";
+	
+	html2canvas(c2).then(function(canvas) {
+		document.getElementById('generate').src = canvas.toDataURL("image/png");
+	});
+	c.style.display = 'none';
+		c2.style.display = 'none';
+	t1.style.display = "inline-block";
+	temp1 = Math.floor(Math.random()*(str.length-0.1));
+	c.style.backgroundImage = "url("+(temp1+1)+'.jpg'+")";
+	mask2.style.visibility = "hidden";
+	mask.style.visibility = "hidden";
+	mask4.style.visibility = "hidden";
+	
+}
+
+let c = document.getElementById('test');
+		let c2 = document.getElementById('test2');
+let username;
+let mask = document.getElementById('mask');
+let mask2 = document.getElementById('mask2');
+let mask4 = document.getElementById('mask4');
+let temp1;
+let temp2;
+let temp3;
+let count=0;
+let p1;
+let name = document.getElementById('name');
+let t1 = document.getElementById('t1');
+
+let divHide = document.getElementById('mask3');
+
+function finish(){
+divHide.ontouchstart = function(e){let touch = e.touches[0];
+	y=touch.clientY;
+}
+divHide.ontouchend = function(e){let touch = e.changedTouches[0];
+	if(y - touch.clientY>70){
+
+			document.getElementById('div-arrow').style.visibility  = "hidden";
+		  $("#mask3").animate({top:"-100%"},400);
+			document.getElementById('mask6').style.visibility  = "hidden";
+	document.getElementById('mask6').style.display  = "none";
+	}
+	temp1 = Math.floor(Math.random()*(str.length-0.1));
+	c.style.backgroundImage = "url("+(temp1+1)+'.jpg'+")";
+}
+document.getElementById("my_bt").onclick=function(){
+	document.getElementById('mask5').style.visibility  = "hidden";
+document.getElementById('mask5').style.display  = "none";
+};
+document.title = "百年毕业快乐";
+
+			
+}
+	</script>
+	</body>
+</html>
