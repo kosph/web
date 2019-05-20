@@ -121,7 +121,7 @@
 			display:block;
 			visibility:hidden;
 		}
-		#mask4{
+		#mask6{
 
 			position:absolute;
 			left:0;
@@ -154,7 +154,7 @@
 		margin-top:79%;
 		}
 		#mask5{
-			-webkit-background-size:100% ;
+			-webkit-background-size:100% 100%;
 			position:absolute;
 			left:0;
 			top:0;
@@ -162,9 +162,9 @@
 			height:100%;
 			width:100%;
 			background-image:url(page1.png);
-			background-position:center;
+			background-position:top;
 			background-repeat:no-repeat;
-			background-size:100%;
+			background-size:100% 100%;
 			display:block;
 		}
 		span{
@@ -173,7 +173,7 @@
 		}
 		#hide{
 			width:100%;
-
+			border:1px solid black;
 			
 			height:100%;
 			text-align:center;
@@ -186,9 +186,10 @@
 			
 			color:black;
 			background-color:white;
+			border:1px solid black;
 			outline: none;
 			font-size:20px;
-			border:none;
+			
 		}
 		button{
 			font-family:  Arial, sans-serif;
@@ -419,16 +420,18 @@ divHide.ontouchend = function(e){let touch = e.changedTouches[0];
 
 			document.getElementById('div-arrow').style.visibility  = "hidden";
 		  $("#mask3").animate({top:"-100%"},400);
-			document.getElementById('mask6').style.visibility  = "hidden";
-	document.getElementById('mask6').style.display  = "none";
+			
 	}
 	temp1 = Math.floor(Math.random()*(str.length-0.1));
+
 	c.style.backgroundImage = "url("+(temp1+1)+'.jpg'+")";
 }
 document.getElementById("my_bt").onclick=function(){
 	document.getElementById('mask5').style.visibility  = "hidden";
 document.getElementById('mask5').style.display  = "none";
 };
+	document.getElementById('mask6').style.visibility  = "hidden";
+	document.getElementById('mask6').style.display  = "none";
 document.title = "百年毕业快乐";
 
 			
